@@ -1,3 +1,7 @@
 *.tfstate
 terraform.tfvars
 .terraform/
+.example.tf.swo
+.example.tf.swp
+ip_address.txt
+terraform.tfstate.backup
