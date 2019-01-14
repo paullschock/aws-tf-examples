@@ -10,3 +10,8 @@ variable "amis" {
     "us-west-2" = "ami-4b32be2b"
   }
 }
+
+variable "server_port" {
+  description = "The port the server will use for HTTP requests"
+  default = 80
+}
