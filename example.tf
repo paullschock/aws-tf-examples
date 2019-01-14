@@ -32,6 +32,14 @@ resource "aws_security_group" "instance" {
 
 resource "aws_security_group" "elb" {
   name = "terraform-example-elb"
+
+  egress {
+  from_port = 0
+  to_port = 0
+  protocol = "-1"
+  cidr_blocks = ["0.0.0.0/0"]
+  }
+
   ingress {
     from_port = "${var.server_port}"
     to_port = "${var.server_port}"
@@ -81,5 +89,9 @@ resource aws_route53_record "www" {
 }
 
 output "name_servers" {
-  value = "{aws_route53_zone.testZone.name_servers}"
+  value = "${aws_route53_zone.testZone.name_servers}"
+}
+
+output "elb_dns_name" {
+  value = "${aws_elb.example.dns_name}"
 }
