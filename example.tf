@@ -82,7 +82,3 @@ resource aws_route53_record "www" {
     evaluate_target_health = true
   }
 }
-
-output "public_ip" {
-  value = "${aws_instance.example.public_ip}"
-}
