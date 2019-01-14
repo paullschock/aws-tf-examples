@@ -66,9 +66,6 @@ resource "aws_elb_attachment" "example" {
 
 resource aws_route53_zone "testZone" {
   name = "aws.paullschock.com"
-  provisioner "local-exec" {
-    command = "echo ${aws_route53_zone.testZone.name_servers} > name_servers.txt"
-  }
 }
 
 resource aws_route53_record "www" {
