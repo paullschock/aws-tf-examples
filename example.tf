@@ -64,15 +64,14 @@ resource "aws_elb_attachment" "example" {
   instance = "${aws_instance.web.id}"
 }
 
-module aws_route53_zone "testZone" {
+resource aws_route53_zone "testZone" {
   name = "aws.paullschock.com"
-
   provisioner "local-exec" {
     command = "echo ${aws_route53_zone.testZone.name_servers} > name_servers.txt"
   }
 }
 
-module aws_route53_record "www" {
+resource aws_route53_record "www" {
   zone_id = "${aws_route53_zone.testZone.zone_id}"
   name = "aws.paullschock.com"
   type = "A"
