@@ -1,0 +1,57 @@
+{
+  "Comment": "",
+  "Inputs": [
+    {
+      "Name": "access_key",
+      "Description": "",
+      "Default": null,
+      "Type": "string"
+    },
+    {
+      "Name": "amis",
+      "Description": "",
+      "Default": {
+        "Type": "map",
+        "Value": {
+          "us-east-1": "ami-b374d5a5",
+          "us-west-2": "ami-4b32be2b"
+        }
+      },
+      "Type": "map"
+    },
+    {
+      "Name": "region",
+      "Description": "",
+      "Default": {
+        "Type": "string",
+        "Value": "us-east-1"
+      },
+      "Type": "string"
+    },
+    {
+      "Name": "secret_key",
+      "Description": "",
+      "Default": null,
+      "Type": "string"
+    },
+    {
+      "Name": "server_port",
+      "Description": "The port the server will use for HTTP requests",
+      "Default": {
+        "Type": "string",
+        "Value": "80"
+      },
+      "Type": "string"
+    }
+  ],
+  "Outputs": [
+    {
+      "Name": "elb_dns_name",
+      "Description": ""
+    },
+    {
+      "Name": "name_servers",
+      "Description": ""
+    }
+  ]
+}
